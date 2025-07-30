@@ -5,22 +5,10 @@ import Hero from '@/components/layout/Hero';
 import ChatBot from '@/components/features/ChatBot';
 
 const Index = () => {
-  const [isDark, setIsDark] = useState(false);
-
   useEffect(() => {
-    // Check system preference or localStorage
-    const darkMode = localStorage.getItem('darkMode') === 'true' || 
-                    (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    setIsDark(darkMode);
-    document.documentElement.classList.toggle('dark', darkMode);
+    // Force dark mode only
+    document.documentElement.classList.add('dark');
   }, []);
-
-  const toggleTheme = () => {
-    const newDarkMode = !isDark;
-    setIsDark(newDarkMode);
-    localStorage.setItem('darkMode', newDarkMode.toString());
-    document.documentElement.classList.toggle('dark', newDarkMode);
-  };
 
   return (
     <motion.div 
@@ -29,7 +17,7 @@ const Index = () => {
       transition={{ duration: 0.8 }}
       className="min-h-screen bg-background text-foreground"
     >
-      <Header isDark={isDark} toggleTheme={toggleTheme} />
+      <Header />
       
       {/* Main Content */}
       <main className="pt-16">
@@ -121,7 +109,14 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="news" className="py-20">
+        <section id="blog" className="py-20">
+          <div className="container mx-auto px-4 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-primary bg-clip-text text-transparent">Blog</h2>
+            <p className="text-lg text-muted-foreground">Teknoloji dünyasından en güncel yazılar ve insights...</p>
+          </div>
+        </section>
+
+        <section id="news" className="py-20 bg-muted/30">
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Haberler</h2>
             <p className="text-lg text-muted-foreground">AI ve no-code dünyasından haberler...</p>

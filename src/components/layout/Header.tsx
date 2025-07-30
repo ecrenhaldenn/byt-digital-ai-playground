@@ -3,19 +3,14 @@ import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 
-interface HeaderProps {
-  isDark: boolean;
-  toggleTheme: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
+const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
     { name: 'Hakkımızda', href: '#about' },
     { name: 'Ürünler/Hizmetler', href: '#products' },
     { name: 'Kariyer', href: '#career' },
-    { name: 'Haberler', href: '#news' },
+    { name: 'Blog', href: '#blog' },
     { name: 'SSS', href: '#faq' },
     { name: 'İletişim', href: '#contact' },
   ];
@@ -78,16 +73,6 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
                 </svg>
               </Button>
             </div>
-
-            {/* Theme Toggle */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="hover:bg-accent"
-            >
-              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </Button>
 
             {/* Mobile menu button */}
             <Button
