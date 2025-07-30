@@ -3,6 +3,11 @@ import { motion } from 'framer-motion';
 import Header from '@/components/layout/Header';
 import Hero from '@/components/layout/Hero';
 import ChatBot from '@/components/features/ChatBot';
+import BlogSection from '@/components/sections/BlogSection';
+import NewsSection from '@/components/sections/NewsSection';
+import FAQSection from '@/components/sections/FAQSection';
+import CareerSection from '@/components/sections/CareerSection';
+import ContactSection from '@/components/sections/ContactSection';
 
 const Index = () => {
   useEffect(() => {
@@ -101,41 +106,11 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Additional sections can be added here */}
-        <section id="career" className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Kariyer</h2>
-            <p className="text-lg text-muted-foreground">Gelecek burada başlıyor...</p>
-          </div>
-        </section>
-
-        <section id="blog" className="py-20">
-          <div className="container mx-auto px-4 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-primary bg-clip-text text-transparent">Blog</h2>
-            <p className="text-lg text-muted-foreground">Teknoloji dünyasından en güncel yazılar ve insights...</p>
-          </div>
-        </section>
-
-        <section id="news" className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Haberler</h2>
-            <p className="text-lg text-muted-foreground">AI ve no-code dünyasından haberler...</p>
-          </div>
-        </section>
-
-        <section id="faq" className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Sık Sorulan Sorular</h2>
-            <p className="text-lg text-muted-foreground">Merak ettikleriniz...</p>
-          </div>
-        </section>
-
-        <section id="contact" className="py-20">
-          <div className="container mx-auto px-4 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">İletişim</h2>
-            <p className="text-lg text-muted-foreground">Bize ulaşın...</p>
-          </div>
-        </section>
+        <BlogSection />
+        <NewsSection />
+        <CareerSection />
+        <FAQSection />
+        <ContactSection />
       </main>
 
       {/* AI Chatbot */}
