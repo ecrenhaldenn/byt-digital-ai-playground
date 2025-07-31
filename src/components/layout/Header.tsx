@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
 
   const menuItems = [
     { name: 'Hakkımızda', href: '#about' },
-    { name: 'Ürünler/Hizmetler', href: '#products' },
     { name: 'Kariyer', href: '#career' },
     { name: 'Blog', href: '#blog' },
     { name: 'SSS', href: '#faq' },
     { name: 'İletişim', href: '#contact' },
+  ];
+
+  const productItems = [
+    { name: 'RIVER', href: '/products/river', description: 'No-code Platform' },
+    { name: 'CALL-AI CRM', href: '/products/call-ai', description: 'AI-Powered CRM' },
+    { name: 'OKTOPUS', href: '/products/oktopus', description: 'Data Integration' },
   ];
 
   return (
@@ -25,20 +32,63 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div 
-            className="flex items-center space-x-2"
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">BYT</span>
-            </div>
-            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              BYT Digital
-            </span>
-          </motion.div>
+          <Link to="/">
+            <motion.div 
+              className="flex items-center space-x-2"
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-sm">BYT</span>
+              </div>
+              <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                BYT Digital
+              </span>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
+            {/* Products Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsProductsOpen(true)}
+              onMouseLeave={() => setIsProductsOpen(false)}
+            >
+              <motion.button
+                className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors relative"
+                whileHover={{ scale: 1.05 }}
+              >
+                Ürünler/Hizmetler
+                <ChevronDown className="w-4 h-4" />
+                <motion.div
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-primary origin-left scale-x-0"
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.button>
+              
+              {/* Dropdown Menu */}
+              {isProductsOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  className="absolute top-full left-0 mt-2 w-64 bg-card border border-border rounded-xl shadow-elegant p-2 z-50"
+                >
+                  {productItems.map((product) => (
+                    <Link
+                      key={product.name}
+                      to={product.href}
+                      className="block p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                    >
+                      <div className="font-medium text-foreground">{product.name}</div>
+                      <div className="text-sm text-muted-foreground">{product.description}</div>
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </div>
+
             {menuItems.map((item) => (
               <motion.a
                 key={item.name}

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Hero from '@/components/layout/Hero';
 import ChatBot from '@/components/features/ChatBot';
@@ -65,41 +68,59 @@ const Index = () => {
               <div className="grid md:grid-cols-3 gap-8">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-card p-8 rounded-2xl shadow-elegant border border-border"
+                  className="bg-card p-8 rounded-2xl shadow-elegant border border-border group cursor-pointer"
                 >
                   <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-6 mx-auto">
                     <span className="text-primary-foreground font-bold text-xl">R</span>
                   </div>
                   <h3 className="text-xl font-bold mb-4">RIVER</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground mb-6">
                     No-code platformu; iş akışlarını kolaylaştırır, tüm süreçleri kod yazmadan yönetmenizi sağlar.
                   </p>
+                  <Link to="/products/river">
+                    <Button className="w-full group-hover:shadow-glow transition-all duration-300">
+                      Detayları İncele
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </motion.div>
 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-card p-8 rounded-2xl shadow-elegant border border-border"
+                  className="bg-card p-8 rounded-2xl shadow-elegant border border-border group cursor-pointer"
                 >
                   <div className="w-16 h-16 bg-gradient-secondary rounded-2xl flex items-center justify-center mb-6 mx-auto">
                     <span className="text-secondary-foreground font-bold text-xl">AI</span>
                   </div>
                   <h3 className="text-xl font-bold mb-4">CALL-AI CRM</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground mb-6">
                     Yapay zeka destekli çağrı merkezi yazılımı. Müşteri iletişimi, analiz ve otomatik kayıt.
                   </p>
+                  <Link to="/products/call-ai">
+                    <Button className="w-full group-hover:shadow-glow transition-all duration-300">
+                      Detayları İncele
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </motion.div>
 
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-card p-8 rounded-2xl shadow-elegant border border-border"
+                  className="bg-card p-8 rounded-2xl shadow-elegant border border-border group cursor-pointer"
                 >
                   <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                    <span className="text-primary-foreground font-bold text-xl">O</span>
+                    <span className="text-primary-foreground font-bold text-xl">🐙</span>
                   </div>
                   <h3 className="text-xl font-bold mb-4">OKTOPUS</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground mb-6">
                     Ahtapot temalı veri merkezi – API bağlantılı, ERP sistemleriyle senkronize çalışan modüler platform.
                   </p>
+                  <Link to="/products/oktopus">
+                    <Button className="w-full group-hover:shadow-glow transition-all duration-300">
+                      Detayları İncele
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>

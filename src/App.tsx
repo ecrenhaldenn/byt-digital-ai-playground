@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import ProductRiver from "./pages/ProductRiver";
+import ProductCallAI from "./pages/ProductCallAI";
+import ProductOktopus from "./pages/ProductOktopus";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +19,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/products/river" element={<ProductRiver />} />
+          <Route path="/products/call-ai" element={<ProductCallAI />} />
+          <Route path="/products/oktopus" element={<ProductOktopus />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
