@@ -104,10 +104,12 @@ const ProductRiver = () => {
                 Sürükle-bırak editörü ile dakikalar içinde karmaşık sistemler tasarlayın.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="group">
-                  Ücretsiz Deneyin
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <a href="https://river.com.tr/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="group">
+                    Platformu Göz At
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
                 <Link to="/#contact">
                   <Button variant="outline" size="lg">
                     Demo İsteyin
@@ -343,10 +345,12 @@ const ProductRiver = () => {
               Ücretsiz deneme ile tüm özellikleri keşfedin.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group">
-                Ücretsiz Başlayın
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <a href="https://river.com.tr/" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="group">
+                  Platformu Göz At
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
               <Link to="/#contact">
                 <Button variant="outline" size="lg">
                   Demo İsteyin

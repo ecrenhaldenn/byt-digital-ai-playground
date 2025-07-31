@@ -22,7 +22,7 @@ const ContactSection: React.FC = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       title: "E-posta",
-      content: "info@bytdigital.com\ndestek@bytdigital.com"
+      content: "info@bytdigital.com.tr\ndestek@bytdigital.com.tr"
     },
     {
       icon: <Clock className="w-5 h-5" />,
@@ -171,14 +171,18 @@ const ContactSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="grid grid-cols-2 gap-4"
             >
-              <Button variant="outline" className="h-auto py-4 flex-col gap-2">
-                <Phone className="w-5 h-5" />
-                <span className="text-sm">Hemen Ara</span>
-              </Button>
-              <Button variant="outline" className="h-auto py-4 flex-col gap-2">
-                <Mail className="w-5 h-5" />
-                <span className="text-sm">WhatsApp</span>
-              </Button>
+              <a href="tel:+905338955389">
+                <Button variant="outline" className="h-auto py-4 flex-col gap-2 w-full">
+                  <Phone className="w-5 h-5" />
+                  <span className="text-sm">Hemen Ara</span>
+                </Button>
+              </a>
+              <a href="https://wa.me/905338955389" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="h-auto py-4 flex-col gap-2 w-full">
+                  <Mail className="w-5 h-5" />
+                  <span className="text-sm">WhatsApp</span>
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -198,9 +202,11 @@ const ContactSection: React.FC = () => {
             Acil durumlar için 7/24 canlı destek hattımızdan bize ulaşabilirsiniz.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-              Canlı Desteği Başlat
-            </Button>
+            <a href="https://wa.me/905338955389" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+                Canlı Desteği Başlat
+              </Button>
+            </a>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
               Destek Dokümantasyonu
             </Button>

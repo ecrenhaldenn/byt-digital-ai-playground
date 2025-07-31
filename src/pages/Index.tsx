@@ -132,6 +132,100 @@ const Index = () => {
         <CareerSection />
         <FAQSection />
         <ContactSection />
+        
+        {/* Location Section */}
+        <section id="location" className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+                Neredeyiz?
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                İzmir İYTE Urla Teknopark'ta bulunan ofisimizde sizi ağırlamaktan mutluluk duyarız.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="w-full h-96 bg-card rounded-2xl overflow-hidden border border-border">
+                <div ref={(el) => {
+                  if (el && !el.dataset.initialized) {
+                    el.dataset.initialized = 'true';
+                    // Initialize Mapbox map for İzmir İYTE
+                    import('mapbox-gl').then((mapboxgl) => {
+                      mapboxgl.default.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+                      
+                      const map = new mapboxgl.default.Map({
+                        container: el,
+                        style: 'mapbox://styles/mapbox/dark-v11',
+                        center: [26.6406, 38.3897], // İzmir İYTE Urla Teknopark coordinates
+                        zoom: 14,
+                        pitch: 45,
+                      });
+
+                      // Add BYT Digital office marker
+                      new mapboxgl.default.Marker({
+                        color: '#8B5CF6'
+                      })
+                        .setLngLat([26.6406, 38.3897])
+                        .setPopup(
+                          new mapboxgl.default.Popup({ offset: 25 })
+                            .setHTML('<div class="p-2"><h3 class="font-bold">BYT Digital</h3><p>İzmir İYTE Urla Teknopark</p></div>')
+                        )
+                        .addTo(map);
+
+                      // Add navigation controls
+                      map.addControl(
+                        new mapboxgl.default.NavigationControl({
+                          visualizePitch: true,
+                        }),
+                        'top-right'
+                      );
+                    });
+                  }
+                }} className="w-full h-full" />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-center mt-8"
+            >
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact">
+                  <Button size="lg" className="group">
+                    Ücretsiz Danışmanlık Alın
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+                <a href="https://wa.me/905338955389" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" size="lg">
+                    WhatsApp ile İletişim
+                  </Button>
+                </a>
+                <a href="mailto:info@bytdigital.com.tr">
+                  <Button variant="outline" size="lg">
+                    E-posta Gönder
+                  </Button>
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </main>
 
       {/* AI Chatbot */}
