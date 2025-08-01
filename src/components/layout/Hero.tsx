@@ -65,29 +65,33 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.8, delay: 1 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button 
-                variant="hero" 
-                size="xl"
-                className="group"
-              >
-                BYT Digital'i Keşfedin
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              
-              <Button 
-                variant="glass" 
-                size="xl"
-                className="group"
-              >
-                Ücretsiz Danışmanlık Alın
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                  className="w-5 h-5"
+              <a href="/about">
+                <Button 
+                  variant="hero" 
+                  size="xl"
+                  className="group"
                 >
-                  <Sparkles className="w-5 h-5" />
-                </motion.div>
-              </Button>
+                  BYT Digital'i Keşfedin
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+              
+              <a href="#contact">
+                <Button 
+                  variant="glass" 
+                  size="xl"
+                  className="group"
+                >
+                  Ücretsiz Danışmanlık Alın
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                    className="w-5 h-5"
+                  >
+                    <Sparkles className="w-5 h-5" />
+                  </motion.div>
+                </Button>
+              </a>
             </motion.div>
 
             {/* Stats */}
@@ -95,14 +99,8 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-border/20"
+              className="grid grid-cols-2 gap-8 mt-12 pt-8 border-t border-border/20"
             >
-              <div className="text-center lg:text-left">
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                  500+
-                </div>
-                <div className="text-sm text-muted-foreground">Başarılı Proje</div>
-              </div>
               <div className="text-center lg:text-left">
                 <div className="text-2xl md:text-3xl font-bold bg-gradient-secondary bg-clip-text text-transparent">
                   98%

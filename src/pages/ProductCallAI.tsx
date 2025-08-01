@@ -125,7 +125,6 @@ const ProductCallAI = () => {
                 </Link>
               </div>
               <div className="mt-8 flex items-center gap-6 text-sm text-muted-foreground">
-                <span>✓ 30 gün ücretsiz deneme</span>
                 <span>✓ Kolay entegrasyon</span>
                 <span>✓ 7/24 destek</span>
               </div>
@@ -163,7 +162,7 @@ const ProductCallAI = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
               Akıllı Özellikler
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
               CALL-AI CRM, yapay zeka teknolojisinin gücünü çağrı merkezi 
               operasyonlarıyla buluşturuyor.
             </p>
@@ -282,42 +281,6 @@ const ProductCallAI = () => {
         </div>
       </section>
 
-      {/* Integrations Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
-              Entegrasyonlar
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Mevcut sistemlerinizle sorunsuz entegrasyon
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {integrations.map((integration, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-card rounded-xl p-6 text-center hover:shadow-elegant transition-all duration-300 hover:scale-105"
-              >
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <span className="font-bold text-primary-foreground text-sm">{integration.logo}</span>
-                </div>
-                <p className="text-sm font-medium">{integration.name}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials Section */}
       <section className="py-20">
@@ -393,11 +356,11 @@ const ProductCallAI = () => {
                 Ücretsiz Demo İsteyin
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Link to="/#contact">
-                <Button variant="outline" size="lg">
-                  İletişime Geçin
-                </Button>
-              </Link>
+                <a href="https://wa.me/905338955389" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" size="lg">
+                    İletişime Geçin
+                  </Button>
+                </a>
             </div>
           </motion.div>
         </div>

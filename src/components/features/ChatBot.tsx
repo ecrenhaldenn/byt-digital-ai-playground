@@ -23,6 +23,54 @@ const ChatBot: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Advanced AI response generator
+  const generateResponse = (userMessage: string): string => {
+    const message = userMessage.toLowerCase();
+    
+    // Product inquiries
+    if (message.includes('river') || message.includes('no-code')) {
+      return "RIVER platformu hakkında detaylı bilgi almak için River ürün sayfamızı ziyaret edebilirsiniz. No-code çözümlerimiz iş süreçlerinizi hızlandırır ve kod yazmadan güçlü uygulamalar geliştirmenizi sağlar.";
+    }
+    
+    if (message.includes('call-ai') || message.includes('crm') || message.includes('çağrı merkezi')) {
+      return "CALL-AI CRM yapay zeka destekli çağrı merkezi çözümümüzdür. Müşteri hizmetlerinizi otomatikleştirin, ses tanıma teknolojisi ile çağrıları analiz edin ve verimlilik artırın.";
+    }
+    
+    if (message.includes('oktopus') || message.includes('entegrasyon') || message.includes('erp')) {
+      return "OKTOPUS platformu ERP sistemlerinizi birleştiren güçlü bir entegrasyon çözümüdür. API bağlantıları ile tüm sistemlerinizi tek merkezden yönetin.";
+    }
+    
+    // Pricing inquiries
+    if (message.includes('fiyat') || message.includes('ücret') || message.includes('maliyet')) {
+      return "Fiyatlandırma bilgileri için size özel teklif hazırlayabiliriz. İhtiyaçlarınızı değerlendirip en uygun paketi sunmak için demo talep edebilir veya bizimle iletişime geçebilirsiniz.";
+    }
+    
+    // Support inquiries
+    if (message.includes('destek') || message.includes('yardım') || message.includes('sorun')) {
+      return "7/24 teknik destek ekibimiz sizin için burada! Hemen WhatsApp üzerinden iletişime geçebilir veya destek talebi oluşturabilirsiniz. Sorununuzu çözmek için elimizden geleni yapacağız.";
+    }
+    
+    // Demo requests
+    if (message.includes('demo') || message.includes('deneme') || message.includes('test')) {
+      return "Ücretsiz demo talep etmek için iletişim formumuzdan bizimle iletişime geçebilirsiniz. Size özel bir demo oturumu ayarlayıp ürünlerimizi tanıtacağız.";
+    }
+    
+    // Company inquiries
+    if (message.includes('hakkında') || message.includes('kim') || message.includes('şirket')) {
+      return "BYT Digital, yapay zeka ve no-code teknolojileri konusunda uzman bir yazılım firmasıdır. İşletmelerin dijital dönüşümünde yenilikçi çözümler sunuyoruz.";
+    }
+    
+    // Generic helpful responses
+    const responses = [
+      "Sorularınızı yanıtlamak için buradayım! Ürünlerimiz, hizmetlerimiz veya teknik konularda detaylı bilgi verebilirim.",
+      "Size nasıl yardımcı olabilirim? RIVER, CALL-AI CRM ve OKTOPUS ürünlerimiz hakkında bilgi alabilir, demo talep edebilirsiniz.",
+      "Merhaba! Dijital çözümlerimiz konusunda sorularınızı yanıtlamaktan mutluluk duyarım. Hangi konuda yardıma ihtiyacınız var?",
+      "BYT Digital ailesine hoş geldiniz! Ürünlerimiz ve hizmetlerimiz hakkında merak ettiğiniz her şeyi sorabilirsiniz."
+    ];
+    
+    return responses[Math.floor(Math.random() * responses.length)];
+  };
+
   const handleSendMessage = () => {
     if (!inputValue.trim()) return;
 
@@ -34,13 +82,14 @@ const ChatBot: React.FC = () => {
     };
 
     setMessages(prev => [...prev, newMessage]);
+    const userInput = inputValue;
     setInputValue('');
 
-    // Simulate bot response
+    // Generate intelligent bot response
     setTimeout(() => {
       const botResponse = {
         id: messages.length + 2,
-        text: "Mesajınızı aldım! Kısa süre içinde size geri dönüş yapacağım.",
+        text: generateResponse(userInput),
         isBot: true,
         timestamp: new Date()
       };

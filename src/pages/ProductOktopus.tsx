@@ -121,11 +121,11 @@ const ProductOktopus = () => {
                   Keşfetmeye Başlayın
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Link to="/#contact">
+                <a href="https://wa.me/905338955389" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="lg">
                     Demo İsteyin
                   </Button>
-                </Link>
+                </a>
               </div>
               <div className="mt-8 flex items-center gap-6 text-sm text-muted-foreground">
                 <span>✓ 500+ hazır entegrasyon</span>
@@ -436,15 +436,17 @@ const ProductOktopus = () => {
               Veri siloları arasındaki duvarları yıkın. Tüm sistemlerinizi tek platformda birleştirin.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="group">
-                Ücretsiz Demo İsteyin
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Link to="/#contact">
+              <a href="https://wa.me/905338955389" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="group">
+                  Ücretsiz Demo İsteyin
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+              <a href="https://wa.me/905338955389" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="lg">
                   Uzmanla Görüşün
                 </Button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>

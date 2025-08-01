@@ -187,87 +187,6 @@ const CareerSection: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Job Positions */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <h3 className="text-2xl font-bold text-center mb-8">Açık Pozisyonlar</h3>
-          
-          <div className="grid lg:grid-cols-2 gap-6">
-            {jobPositions.map((job, index) => (
-              <motion.div
-                key={job.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-              >
-                <Card className={`group hover:shadow-glow transition-all duration-300 border-border/50 h-full ${job.featured ? 'ring-2 ring-accent' : ''}`}>
-                  <CardHeader>
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex gap-2 flex-wrap">
-                        <Badge className={`${departmentColors[job.department as keyof typeof departmentColors]} text-white`}>
-                          {job.department}
-                        </Badge>
-                        {job.featured && (
-                          <Badge variant="outline" className="border-accent text-accent">
-                            Öne Çıkan
-                          </Badge>
-                        )}
-                      </div>
-                    </div>
-                    <CardTitle className="group-hover:text-accent transition-colors">
-                      {job.title}
-                    </CardTitle>
-                    <CardDescription>
-                      {job.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="grid grid-cols-2 gap-4 text-sm">
-                        <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4 text-muted-foreground" />
-                          <span>{job.location}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Clock className="w-4 h-4 text-muted-foreground" />
-                          <span>{job.type}</span>
-                        </div>
-                        <div className="col-span-2">
-                          <span className="text-muted-foreground">Deneyim: </span>
-                          <span className="font-medium">{job.experience}</span>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-medium mb-2">Aranan Özellikler:</h4>
-                        <ul className="text-sm text-muted-foreground space-y-1">
-                          {job.requirements.slice(0, 3).map((req, i) => (
-                            <li key={i} className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                              {req}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <a href="#contact">
-                        <Button variant="outline" className="w-full group/btn">
-                          Başvur
-                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </Button>
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* CTA Section */}
         <motion.div
@@ -280,7 +199,7 @@ const CareerSection: React.FC = () => {
           <h3 className="text-2xl font-bold text-primary-foreground mb-4">
             Aradığınız pozisyonu bulamadınız mı?
           </h3>
-          <p className="text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
+          <p className="text-primary-foreground mb-6 max-w-2xl mx-auto">
             Yetenekli bireylerle tanışmayı her zaman seviyoruz. CV'nizi gönderin, 
             sizin için uygun bir fırsat çıktığında hemen iletişime geçelim.
           </p>

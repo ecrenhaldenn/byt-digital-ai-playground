@@ -117,7 +117,6 @@ const ProductRiver = () => {
                 </Link>
               </div>
               <div className="mt-8 flex items-center gap-6 text-sm text-muted-foreground">
-                <span>✓ 14 gün ücretsiz deneme</span>
                 <span>✓ Kredi kartı gerektirmez</span>
                 <span>✓ Anında kurulum</span>
               </div>
@@ -351,11 +350,11 @@ const ProductRiver = () => {
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
-              <Link to="/#contact">
+              <a href="https://wa.me/905338955389" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="lg">
                   Demo İsteyin
                 </Button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>

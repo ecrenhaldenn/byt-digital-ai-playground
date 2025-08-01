@@ -204,7 +204,7 @@ const ContactSection: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="https://wa.me/905338955389" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-                Canlı Desteği Başlat
+                WhatsApp Destek
               </Button>
             </a>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
